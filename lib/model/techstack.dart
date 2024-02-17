@@ -1,5 +1,5 @@
 class Frontend {
-    final String applicationTypes;  // web, mobile, desktop, firmware etc 
+    final String applicationTypes;  // web, mobile, desktop, firmware etc // enum 
     final String language;   
     final String framework;
 }
@@ -13,7 +13,7 @@ class Backend {
 class Database {
     final String local; // caching the databse
     final String server;
-    final String type; // SQL, NoSQL etc
+    final String type; // SQL, NoSQL etc // enum
 }
 
 class Testing {
