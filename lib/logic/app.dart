@@ -1,3 +1,5 @@
+import 'package:args/args.dart';
+
 import '../utils/commands.dart';
 
 void toolInfoMessage() {
@@ -14,13 +16,23 @@ void toolInfoMessage() {
   print('  -o, --output: Output file name.');
 }
 
-Future<void> app(List<String> paths) async {
-  if (paths.isEmpty) {
+Future<void> app(ArgResults? commands, ArgResults results) async {
+  if (commands == null) {
     toolInfoMessage();
     return;
   } else {
-    for (final path in paths) {
-      print(path);
+    switch (commands.name) {
+      case createProjectCommand:
+        print('Create a new project with the given techstack');
+        if (results['name'] != null) {
+          print(results['name']);
+        }
+        break;
+      case gnerateRandomTechStackCommand:
+        print('Generate a random techstack');
+        break;
+      default:
+        toolInfoMessage();
     }
   }
 }
