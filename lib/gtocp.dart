@@ -1,4 +1,2 @@
-// Random Tech Stack Generation
-
-import 'dart:io';
-
+export './utils/commands.dart';
+export './logic/app.dart';
